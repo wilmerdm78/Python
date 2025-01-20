@@ -1,0 +1,23 @@
+--Average watch duration for each movie
+SELECT `title`, avg(`duration`) as `avg_duration`
+FROM `Netflix_avro`
+GROUP BY `title`;
+
+
+--Daily engagement patterns for each movie title
+SELECT `date`, `title`, count(`title`) AS `views`, SUM(`duration`) AS `watch_time`
+  FROM (
+SELECT SUBSTR(`datetime`, 1, POSITION(' ' IN `datetime`)) AS `date`,
+  `title`,
+  `duration`
+FROM `Netflix_avro`
+  )
+GROUP BY `date`, `title`;
+
+
+--Average watch duration for top ten movies (in Hours)
+SELECT `title`, (avg(`duration`)/3600) as `avg_duration_hours`
+  FROM `Netflix_avro` 
+  GROUP BY `title`
+  ORDER BY `avg_duration_hours` DESC
+  limit 10;
