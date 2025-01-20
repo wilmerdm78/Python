@@ -6,17 +6,17 @@ from confluent_kafka.schema_registry.avro import AvroDeserializer
 
 
 # Configuration
-bootstrap_servers = 'pkc-p11xm.us-east-1.aws.confluent.cloud:9092'
-username = 'TYFI3BPHPFXI33JG'
-password = 'fRs3XPmDl0f/QJTtO0+3o4GOhZQAOMpvjrXNO8y27s/ru8fusdtPl6Wp7zUfyGXB'
-schema_registry_url = 'https://psrc-6kq702.us-east-1.aws.confluent.cloud'
-topic_name = 'Netflix_avro'
-group_id = 'lkc-2kpv6y'
+bootstrap_servers = <BOOTSTRAP_SERVER>
+username = <USER_NAME>
+password = <PASSWORD>
+schema_registry_url = <REGISTRY_URL>
+topic_name = <KAFKA_TOPIC>
+group_id = <CLUSTER_GROUP_ID>
 
 #Configure Kafka and Schema Registry
 schema_registry_conf = {
-        'url': 'https://psrc-6kq702.us-east-1.aws.confluent.cloud',
-        'basic.auth.user.info': f'BLY3JSFSCTDBORGC:gypKJdK7TSspbGpCQe4MYkzjvllUEFvf8aQOdwEezE3PSnmMVW80rEEt3ghiRLGx'
+        'url': <REGISTRY_URL>,
+        'basic.auth.user.info': f'<REGISTRY_USERNAME>:<REGISTRY_PASSWORD>'
         }
 
 #Configure the Consumer
