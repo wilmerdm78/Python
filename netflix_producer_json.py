@@ -5,17 +5,16 @@ import csv
 from confluent_kafka import Producer
 
 #set variables
-topic = "Netflix_json"
+topic = <KAFKA_TOPIC>
 file_path = '/home/ubuntu/data/vodclickstream_uk_movies_03.csv'
 
 if __name__ == '__main__':
 
     producer_config = {
         # User-specific properties that you must set
-        'bootstrap.servers': 'pkc-p11xm.us-east-1.aws.confluent.cloud:9092',
-        'sasl.username':     'TYFI3BPHPFXI33JG',
-        'sasl.password':     'fRs3XPmDl0f/QJTtO0+3o4GOhZQAOMpvjrXNO8y27s/ru8fusdtPl6Wp7zUfyGXB',
-
+        'bootstrap.servers': <BOOTSTRAP_SERVER>,
+        'sasl.username':     <USERNAME>,
+        'sasl.password':     <PASSWORD>,
         # Fixed properties
         'security.protocol': 'SASL_SSL',
         'sasl.mechanisms':   'PLAIN',
