@@ -12,9 +12,9 @@ if __name__ == "__main__":
 	#Configure the Producer
 	producer_config = {
     	# User-specific properties that you must set
-    	'bootstrap.servers': 'pkc-p11xm.us-east-1.aws.confluent.cloud:9092',
-    	'sasl.username': 'TYFI3BPHPFXI33JG',
-    	'sasl.password': 'fRs3XPmDl0f/QJTtO0+3o4GOhZQAOMpvjrXNO8y27s/ru8fusdtPl6Wp7zUfyGXB',
+    	'bootstrap.servers': <BOOTSTRAP_SERVER>,
+    	'sasl.username': <USERNAME>,
+    	'sasl.password': <PASSWORD>,
     	# Fixed properties
     	'security.protocol': 'SASL_SSL',
     	'sasl.mechanisms':   'PLAIN',
@@ -25,7 +25,7 @@ if __name__ == "__main__":
 	producer = Producer(producer_config)
 
 	#Idenfiy topic and file path
-	topic_name = 'Netflix_avro'
+	topic_name = <KAFKA_TOPIC>
 	file_path = '/home/ubuntu/data/vodclickstream_uk_movies_03.csv'
 
 	#Define the Avro schema
